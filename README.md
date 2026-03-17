@@ -17,11 +17,12 @@ A structured review of your work session. Captures what was built, what went wro
 
 ### `/daysend` — Day's End
 
-A single command that runs the full end-of-day routine: retro, memory persistence, commit, and push. Designed to wrap up your session in one shot.
+A single command that runs the full end-of-day routine: retro, memory persistence, and commit. Designed to wrap up your session in one shot.
 
 - Runs `/retro`
 - Persists any new learnings to Claude's memory system
-- Commits all session work and pushes to remote
+- Commits all session work
+- Checks for unpushed commits and asks before pushing
 
 ## Install
 
