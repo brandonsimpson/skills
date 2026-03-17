@@ -15,14 +15,32 @@ Invoke the `retro` skill. Follow its full process:
 
 ### Step 2: Persist memories
 
-Review the conversation for anything that should be saved to the Claude memory system:
+Review the conversation for anything worth persisting across sessions. Save memories as markdown files in the project directory at `.claude/memories/`:
 
-- **User memories:** Any new details about the user's role, preferences, or knowledge
-- **Feedback memories:** Any corrections or guidance given during the session
-- **Project memories:** Any decisions, milestones, or context changes
-- **Reference memories:** Any external resources or tools discovered
+1. **Check for existing memories** — read `.claude/memories/MEMORY.md` if it exists to avoid duplicates
+2. **Write memory files** — save each memory to its own file (e.g., `user_role.md`, `feedback_testing.md`) with this frontmatter:
 
-Check existing memories first to avoid duplicates. Update existing memories if they've changed.
+```markdown
+---
+name: {{memory name}}
+description: {{one-line description}}
+type: {{user | feedback | project | reference}}
+---
+
+{{memory content}}
+```
+
+3. **Update the index** — add/update entries in `.claude/memories/MEMORY.md` (create if it doesn't exist). This is an index of pointers, not memory content.
+
+**Memory types:**
+- **User** — role, preferences, knowledge, working style
+- **Feedback** — corrections or guidance given during the session (include why)
+- **Project** — decisions, milestones, context changes (convert relative dates to absolute)
+- **Reference** — pointers to external resources, tools, dashboards
+
+**What NOT to save:** code patterns derivable from the codebase, git history, debugging solutions already in code, ephemeral task details.
+
+Check existing memories first. Update rather than duplicate.
 
 ### Step 3: Commit everything
 
