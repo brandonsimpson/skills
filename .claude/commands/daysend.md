@@ -1,6 +1,6 @@
 # Day's End
 
-You are running the **day's end routine** — a single command that wraps up the work session, captures everything, and pushes to remote.
+You are running the **day's end routine** — a single command that wraps up the work session and captures everything.
 
 ## Process
 
@@ -38,13 +38,15 @@ Review what's being committed. Stage relevant files (not secrets, not .env, not 
 daysend: <date> — <1-line session summary>
 ```
 
-### Step 4: Push to remote
+### Step 4: Check for unpushed commits
 
 ```bash
-git push
+git log @{u}..HEAD --oneline 2>/dev/null
 ```
 
-If push fails (behind remote, etc.), report the issue to the user rather than force-pushing.
+If there are unpushed commits, tell the user how many and ask if they want to push. Do NOT push automatically.
+
+If there are no unpushed commits (or no upstream is set), skip this step.
 
 ### Step 5: Confirm
 
@@ -52,7 +54,7 @@ Report to the user:
 - Retro status (accepted/needs-revision/rejected)
 - Memories saved/updated count
 - Commit hash
-- Push status (success/failed)
+- Unpushed commits (count, or "none")
 
 ## Rules
 
