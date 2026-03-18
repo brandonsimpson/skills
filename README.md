@@ -1,10 +1,19 @@
 # skills
 
-A set of reusable [Claude Code](https://docs.anthropic.com/en/docs/claude-code) slash commands for wrapping up work sessions and running retrospectives.
+A set of reusable [Claude Code](https://docs.anthropic.com/en/docs/claude-code) slash commands for managing work sessions — planning what's next, running retrospectives, and wrapping up the day.
 
-These commands are project-agnostic. Install them in any repo and they'll save their outputs into that project's `docs/` directory.
+These commands are project-agnostic. Install them in any repo and they work with that project's structure.
 
 ## What's Included
+
+### `/next` — What's Next
+
+Reviews your project backlog and presents prioritized next steps for the session.
+
+- Reads `BACKLOG.md` and parses all sections
+- Runs a quick project health check (tests, uncommitted work, recent commits)
+- Presents blocking items, a recommended next action, and quick wins
+- Waits for your decision before doing anything
 
 ### `/retro` — Task Retrospective
 
@@ -33,6 +42,7 @@ Clone this repo and copy the commands into your project's `.claude/commands/` di
 cp -r skills/.claude/commands/ your-project/.claude/commands/
 
 # Or symlink for automatic updates
+ln -s /path/to/skills/.claude/commands/next.md your-project/.claude/commands/next.md
 ln -s /path/to/skills/.claude/commands/retro.md your-project/.claude/commands/retro.md
 ln -s /path/to/skills/.claude/commands/daysend.md your-project/.claude/commands/daysend.md
 ```
