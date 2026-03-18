@@ -1,6 +1,6 @@
 # skills
 
-A set of reusable [Claude Code](https://docs.anthropic.com/en/docs/claude-code) slash commands for managing work sessions — planning what's next, running retrospectives, and wrapping up the day.
+My personal [Claude Code](https://docs.anthropic.com/en/docs/claude-code) slash commands that I use frequently for managing work sessions — planning what's next, running retrospectives, and wrapping up the day.
 
 These commands are project-agnostic. Install them in any repo and they work with that project's structure.
 
@@ -24,6 +24,15 @@ A structured review of your work session. Captures what was built, what went wro
 - Maintains a running retro log for trend analysis
 - Identifies source docs that need updating based on what was learned
 
+### `/backlog` — Backlog Manager
+
+Manage your project's todo backlog from the command line.
+
+- Shows, adds, completes, removes, and prioritizes items in `~/dev/BACKLOG.md`
+- Auto-numbers items and renumbers after changes
+- Tracks completion dates in a Done section
+- Creates `BACKLOG.md` with standard format if it doesn't exist
+
 ### `/daysend` — Day's End
 
 A single command that runs the full end-of-day routine: retro, memory persistence, and commit. Designed to wrap up your session in one shot.
@@ -44,6 +53,7 @@ cp -r skills/.claude/commands/ your-project/.claude/commands/
 # Or symlink for automatic updates
 ln -s /path/to/skills/.claude/commands/next.md your-project/.claude/commands/next.md
 ln -s /path/to/skills/.claude/commands/retro.md your-project/.claude/commands/retro.md
+ln -s /path/to/skills/.claude/commands/backlog.md your-project/.claude/commands/backlog.md
 ln -s /path/to/skills/.claude/commands/daysend.md your-project/.claude/commands/daysend.md
 ```
 
