@@ -28,7 +28,7 @@ A structured review of your work session. Captures what was built, what went wro
 
 Manage your project's todo backlog from the command line.
 
-- Shows, adds, completes, removes, and prioritizes items in `~/dev/BACKLOG.md`
+- Shows, adds, completes, removes, and prioritizes items in `BACKLOG.md` at the project root
 - Auto-numbers items and renumbers after changes
 - Tracks completion dates in a Done section
 - Creates `BACKLOG.md` with standard format if it doesn't exist

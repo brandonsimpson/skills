@@ -1,11 +1,11 @@
 ---
 name: backlog
-description: Use when managing, viewing, adding, removing, or prioritizing backlog items in ~/dev/BACKLOG.md. Triggered by /backlog or when user mentions backlog, todo items, or task tracking.
+description: Use when managing, viewing, adding, removing, or prioritizing backlog items in BACKLOG.md at the project root. Triggered by /backlog or when user mentions backlog, todo items, or task tracking.
 ---
 
 # Backlog
 
-Manage the backlog of todo items stored in `~/dev/BACKLOG.md`.
+Manage the backlog of todo items stored in `BACKLOG.md` at the project root.
 
 ## Usage
 
@@ -17,7 +17,7 @@ Manage the backlog of todo items stored in `~/dev/BACKLOG.md`.
 
 ## Behavior
 
-1. **Read** `~/dev/BACKLOG.md` to get current state
+1. **Read** `BACKLOG.md` at the project root to get current state
 2. **Apply** the requested operation (show, add, done, remove, prioritize)
 3. **Write** updated file back if changed
 4. **Display** the current backlog to the user after any operation
