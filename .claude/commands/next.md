@@ -18,10 +18,14 @@ git status --short
 git log --oneline -5
 ```
 
-If the project has a test command (check package.json scripts), run it:
-```bash
-npm test 2>&1 | tail -5
-```
+If the project has a test command, detect and run it:
+- `package.json` scripts → `npm test`
+- `Makefile` with test target → `make test`
+- `pytest.ini` / `pyproject.toml` / `setup.cfg` → `pytest`
+- `Cargo.toml` → `cargo test`
+- `go.mod` → `go test ./...`
+
+Run the detected command and capture the last few lines of output.
 
 Report: tests passing, any uncommitted work, last few commits.
 
