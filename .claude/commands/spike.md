@@ -19,27 +19,24 @@ Wait for their response. This focuses the spike on what actually matters.
 
 ### Step 2: Set up the spike
 
-Create a spike directory:
+Create a spike directory using whatever language/tooling fits the project:
 ```
 spikes/<name>/
-  package.json
-  tsconfig.json
-  src/
-    main.ts        — primary validation script
-  FINDINGS.md      — results (created after running)
+  <minimal project setup>   — only what's needed to run the spike
+  FINDINGS.md                — results (created after running)
 ```
 
-Install only the dependencies needed. Load env vars from the project root `.env`.
+Match the project's existing language and tooling. Install only the dependencies needed. Load env vars from the project root `.env` if applicable.
 
 ### Step 3: Write targeted tests
 
 Each test validates ONE specific capability:
 - Does it work at all? (basic connectivity/import)
 - Does the key feature work? (the thing we actually need)
-- Does it work with our constraints? (budget, security, isolation, TypeScript)
+- Does it work with our constraints? (budget, security, isolation, existing stack)
 - What are the gotchas? (unexpected behavior, missing features, wrong defaults)
 
-Tests should be runnable scripts (`npx tsx src/main.ts`), not unit tests. The point is to see real behavior, not mock it.
+Tests should be runnable scripts, not unit tests. The point is to see real behavior, not mock it.
 
 ### Step 4: Run and observe
 
@@ -94,14 +91,14 @@ Update BACKLOG.md with findings if relevant.
 - **Test with real APIs.** Don't mock — the point is to find real-world surprises.
 - **Document the actual API shape.** Copy the working code patterns into FINDINGS.md so future implementation can copy-paste.
 - **Kill early.** If the first test fails fundamentally, document why and stop. Don't polish a spike.
-- **Always check: does it work with our stack?** TypeScript, ESM, Vercel AI SDK, Turso, Fly.io.
+- **Always check: does it work with the project's stack?** Validate compatibility with the existing language, frameworks, and infrastructure.
 
 ## Examples
 
 ```
-/spike @anthropic-ai/claude-agent-sdk
-/spike turso embedded replicas
+/spike redis vs memcached for session storage
 /spike stripe metered billing
 /spike cloudflare r2 for artifact storage
-/spike expo push notifications
+/spike grpc between python and go services
+/spike sqlite with embedded replicas
 ```
