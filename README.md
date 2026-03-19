@@ -33,6 +33,16 @@ Manage your project's todo backlog from the command line.
 - Tracks completion dates in a Done section
 - Creates `BACKLOG.md` with standard format if it doesn't exist
 
+### `/spike` — Technical Spike
+
+Run a rapid validation spike on a technology, framework, API, or architectural approach before committing to it.
+
+- Asks for your riskiest assumption to focus the spike
+- Creates a standalone spike directory with runnable scripts
+- Tests real APIs and behavior (no mocking)
+- Documents findings with status, gotchas, and architecture impact
+- Commits results and updates backlog
+
 ### `/daysend` — Day's End
 
 A single command that runs the full end-of-day routine: retro, memory persistence, and commit. Designed to wrap up your session in one shot.
@@ -54,6 +64,7 @@ cp -r skills/.claude/commands/ your-project/.claude/commands/
 ln -s /path/to/skills/.claude/commands/next.md your-project/.claude/commands/next.md
 ln -s /path/to/skills/.claude/commands/retro.md your-project/.claude/commands/retro.md
 ln -s /path/to/skills/.claude/commands/backlog.md your-project/.claude/commands/backlog.md
+ln -s /path/to/skills/.claude/commands/spike.md your-project/.claude/commands/spike.md
 ln -s /path/to/skills/.claude/commands/daysend.md your-project/.claude/commands/daysend.md
 ```
 
