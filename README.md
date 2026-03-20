@@ -4,6 +4,30 @@ My personal [Claude Code](https://docs.anthropic.com/en/docs/claude-code) slash 
 
 These commands are project-agnostic. Install them in any repo and they work with that project's structure.
 
+## Workflow
+
+```mermaid
+graph LR
+    next["/next<br>Pick work"] --> spike["/spike<br>Validate"]
+    next --> build["Build"]
+    spike --> build
+    build --> retro["/retro<br>Review"]
+    retro --> daysend["/daysend<br>Wrap up"]
+    daysend --> next
+
+    backlog["/backlog<br>Manage tasks"] -.-> next
+    daysend -.-> backlog
+
+    style next fill:#4a9eff,color:#fff
+    style spike fill:#f59e0b,color:#fff
+    style build fill:#10b981,color:#fff
+    style retro fill:#8b5cf6,color:#fff
+    style daysend fill:#ef4444,color:#fff
+    style backlog fill:#6b7280,color:#fff
+```
+
+**The daily loop:** `/next` picks work from the backlog → `/spike` validates unknowns → build → `/retro` captures learnings → `/daysend` wraps up (retro, memories, CLAUDE.md reflection, commit) → next session starts again with `/next`.
+
 ## What's Included
 
 ### `/next` — What's Next
