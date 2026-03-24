@@ -7,26 +7,31 @@ These commands are project-agnostic. Install them in any repo and they work with
 ## Workflow
 
 ```mermaid
-graph LR
-    next["/next<br>Pick work"] --> spike["/spike<br>Validate"]
-    next --> build["Build"]
-    spike --> build
-    build --> retro["/retro<br>Review"]
+graph TD
+    next["/next<br>Pick work"] --> plan["Plan +<br>Critique"]
+    next -.-> spike["/spike<br>Validate"]
+    spike -.-> plan
+    plan --> build["Build"]
+    build --> review["Code/Security<br>Review"]
+    review -->|fix| build
+    review --> retro["/retro<br>Review"]
+    review -.-> backlog["/backlog<br>Manage tasks"]
     retro --> daysend["/daysend<br>Wrap up"]
-    daysend --> next
+    retro -.-> backlog
 
-    backlog["/backlog<br>Manage tasks"] -.-> next
-    daysend -.-> backlog
+    backlog -.-> next
 
     style next fill:#4a9eff,color:#fff
     style spike fill:#f59e0b,color:#fff
+    style plan fill:#f97316,color:#fff
     style build fill:#10b981,color:#fff
+    style review fill:#ec4899,color:#fff
     style retro fill:#8b5cf6,color:#fff
     style daysend fill:#ef4444,color:#fff
     style backlog fill:#6b7280,color:#fff
 ```
 
-**The daily loop:** `/next` picks work from the backlog → `/spike` validates unknowns → build → `/retro` captures learnings → `/daysend` wraps up (retro, memories, CLAUDE.md reflection, commit) → next session starts again with `/next`.
+**The daily loop:** `/next` picks work from the backlog → `/spike` validates unknowns → plan with [devils-advocate](https://github.com/brandonsimpson/devils-advocate) critique → build → code/security review → `/retro` captures learnings → `/daysend` wraps up (retro, memories, CLAUDE.md reflection, commit). Reviews and retros feed new items back into the backlog.
 
 ## What's Included
 
