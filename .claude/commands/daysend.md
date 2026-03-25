@@ -42,7 +42,32 @@ type: {{user | feedback | project | reference}}
 
 Check existing memories first. Update rather than duplicate.
 
-### Step 3: Daily CLAUDE.md reflection
+### Step 3: Session self-analysis
+
+Before reflecting on CLAUDE.md updates, review the entire session for process quality. This is how the process improves over time.
+
+**Analyze the session for:**
+
+1. **Process failures** — where were reviews skipped, deploys unverified, docs not read? Did you skip a skill, ignore a checklist step, or rush past verification?
+2. **Debugging waste** — where did trial-and-error replace reading docs or logs? Count the cycles wasted on guessing vs. what reading the error message or docs would have told you immediately.
+3. **New anti-patterns** — repeated mistakes that should become rules. If the same mistake happened twice, it needs a rule to prevent a third time.
+4. **What worked well** — approaches worth reinforcing. What saved time, caught bugs early, or produced clean results on the first try?
+
+**Process:**
+
+1. Walk through the session chronologically, noting each category above
+2. Present findings to the user as a brief summary:
+
+> **Session self-analysis:**
+>
+> - **Process failures:** [list, or "none"]
+> - **Debugging waste:** [list, or "none"]
+> - **New anti-patterns:** [list, or "none"]
+> - **What worked well:** [list]
+
+3. Any new anti-patterns or process failures identified here should be carried forward as candidate CLAUDE.md rules in the next step
+
+### Step 4: Daily CLAUDE.md reflection
 
 After retro and memories are complete, reflect on the entire day's work to identify improvements for the project's CLAUDE.md file. This is the daily feedback loop — each session should make future sessions better, faster, smarter, and more secure.
 
@@ -77,7 +102,7 @@ After retro and memories are complete, reflect on the entire day's work to ident
 - Project-specific rules → `./CLAUDE.md` (project root)
 - Cross-project rules (personal workflow, general preferences) → `~/.claude/CLAUDE.md`
 
-### Step 4: Commit everything
+### Step 5: Commit everything
 
 Stage all uncommitted changes from the session:
 
@@ -91,7 +116,7 @@ Review what's being committed. Stage relevant files (not secrets, not .env, not 
 daysend: <date> — <1-line session summary>
 ```
 
-### Step 5: Check for unpushed commits
+### Step 6: Check for unpushed commits
 
 ```bash
 git log @{u}..HEAD --oneline 2>/dev/null
@@ -101,11 +126,12 @@ If there are unpushed commits, tell the user how many and ask if they want to pu
 
 If there are no unpushed commits (or no upstream is set), skip this step.
 
-### Step 6: Confirm
+### Step 7: Confirm
 
 Report to the user:
 - Retro status (accepted/needs-revision/rejected)
 - Memories saved/updated count
+- Session self-analysis (issues found count, or "clean session")
 - CLAUDE.md updates (count added, or "none")
 - Commit hash
 - Unpushed commits (count, or "none")
