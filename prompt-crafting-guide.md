@@ -1,6 +1,6 @@
 # How to Craft an Effective Prompt
 
-> Distilled from 20+ research papers (2025–2026), validated against production systems.
+> Distilled from 20+ research papers (2025–2026), validated across independent benchmarks.
 > See [References](#references) below for full citations.
 
 ---
@@ -165,7 +165,15 @@ Why it works: specific stack and tooling (Expo SDK 52, Express, Railway), scoped
 
 ## References
 
-Distilled from 20+ research papers (2025–2026). Listed by topic area.
+Distilled from 20+ research papers (2025–2026), independently validated across multiple benchmarks and domains:
+
+- **Multi-model testing** — Wharton GAIL reports tested across 6 LLM models on real-world tasks
+- **Financial QA** — FinQA benchmarks comparing small models to GPT-4 (77.59 vs 77.51 accuracy)
+- **Legal** — Analysis of 700+ real court cases involving AI hallucinations with documented sanctions
+- **Healthcare** — Hallucination mitigation studies in production medical systems
+- **Persona–accuracy tradeoff** — Confirmed independently by USC, Wharton, EMNLP, and multiple other research groups
+
+Listed by topic area.
 
 ### Personas & Role Prompting
 
