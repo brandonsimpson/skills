@@ -110,6 +110,10 @@ These commands are meant to be forked and adapted. A few things you might want t
 - **Output paths** — retros write to `docs/retros/`. Change these to match your project structure.
 - **Commit message format** — each command uses a conventional prefix (`retro:`, `daysend:`). Adjust to match your project's conventions.
 
+## Author
+
+[Brandon Simpson](https://brandon.cc) · [@surfnscale](https://x.com/surfnscale)
+
 ## License
 
 MIT
