@@ -1,5 +1,7 @@
 # How to Craft an Effective Prompt
 
+*By [Brandon Simpson](https://brandon.cc) · [@surfnscale](https://x.com/surfnscale)*
+
 > Distilled from 20+ research papers (2025–2026), validated across independent benchmarks.
 > See [References](#references) below for full citations.
 
