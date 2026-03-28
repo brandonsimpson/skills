@@ -6,9 +6,9 @@ Review the backlog and present the prioritized next steps for this session.
 
 ### Step 1: Read the backlog
 
-Read `BACKLOG.md` at the project root. Parse all sections and their items.
+Read `BACKLOG.json` at the project root. Parse all sections and their items.
 
-If `BACKLOG.md` doesn't exist, say so and suggest creating one.
+If `BACKLOG.json` doesn't exist, say so and suggest creating one.
 
 ### Step 2: Check project state
 
@@ -77,4 +77,4 @@ Wait for the user's response before doing anything.
 - Do NOT start working on anything — just present the options
 - Do NOT skip the health check — always verify the project state
 - Keep it concise — the user wants a quick briefing, not a novel
-- If BACKLOG.md doesn't exist, say so and suggest creating one
+- If BACKLOG.json doesn't exist, say so and suggest creating one
