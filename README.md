@@ -52,6 +52,8 @@ A structured review of your work session. Captures what was built, what went wro
 - Writes a retro file to `docs/retros/`
 - Maintains a running retro log for trend analysis
 - Identifies source docs that need updating based on what was learned
+- Evaluates planning and review process quality (not just work output)
+- Captures process improvements — workflow breakdowns, missing rules, skill updates needed
 
 ### `/backlog` — Backlog Manager
 

@@ -75,6 +75,12 @@ Status: accepted | needs-revision | rejected
 
 ## Source Doc Updates
 <list of docs updated as part of this retro, with what changed — or "None needed">
+
+## Process Improvements
+- <what broke in the planning/review workflow>
+- <what rule or check would have prevented it>
+- <skills/commands updated as a result>
+- <or "Process worked as designed — no changes needed">
 ```
 
 ### Step 5: Update the retro log
@@ -91,7 +97,31 @@ The retro log is a running index for trend analysis — keep entries concise.
 
 If Step 3 identified docs that need updating, update them now.
 
-### Step 7: Commit
+### Step 7: Process Self-Analysis
+
+Evaluate the planning and review process itself — not just the work output. This step improves how we work in future sessions.
+
+**Planning quality check:**
+- Did plans go through a full critique cycle before implementation? If not, why?
+- Were library APIs verified before writing code, or assumed?
+- Were previous decisions/memory cross-checked before planning?
+
+**Review quality check:**
+- Were duplicates caught before creating new backlog items?
+- Did critiques catch real issues or just surface-level formatting?
+- Were any issues only caught by the user that the process should have caught?
+
+**Process improvements:**
+- What broke in the workflow that should be automated or enforced?
+- What new rule or checklist item would prevent the mistakes made this session?
+- Should any skill or command be updated?
+
+Write findings in the `## Process Improvements` section of the retro. If improvements are identified:
+- Update the relevant skill/command file immediately
+- Add to CLAUDE.md if it's a universal rule
+- Save to memory if it's a workflow preference
+
+### Step 8: Commit
 
 Stage and commit all retro files and source doc updates with message:
 ```
