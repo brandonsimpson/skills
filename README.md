@@ -39,7 +39,7 @@ graph TD
 
 Reviews your project backlog and presents prioritized next steps for the session.
 
-- Reads `BACKLOG.md` and parses all sections
+- Reads `BACKLOG.json` and parses all sections
 - Runs a quick project health check (tests, uncommitted work, recent commits)
 - Presents blocking items, a recommended next action, and quick wins
 - Waits for your decision before doing anything
@@ -59,10 +59,10 @@ A structured review of your work session. Captures what was built, what went wro
 
 Manage your project's todo backlog from the command line.
 
-- Shows, adds, completes, removes, and prioritizes items in `BACKLOG.md` at the project root
+- Shows, adds, completes, removes, and prioritizes items in `BACKLOG.json` at the project root
 - Auto-numbers items and renumbers after changes
 - Tracks completion dates in a Done section
-- Creates `BACKLOG.md` with standard format if it doesn't exist
+- Creates `BACKLOG.json` with standard format if it doesn't exist
 
 ### `/spike` — Technical Spike
 

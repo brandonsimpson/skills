@@ -13,24 +13,7 @@ Look at what happened in this conversation:
 - Were there any surprises, failures, or workarounds?
 - What patterns or workflows were discovered?
 
-**If conversation context is thin** (e.g., this command was invoked in a new session), reconstruct context from these sources:
-
-1. **Git history** — check recent commits, diffs, and branch activity:
-   ```bash
-   git log --oneline -20
-   git diff HEAD~5..HEAD --stat
-   ```
-2. **Claude session files** — read the most recent session JSONL for this project. Find the project slug from the current working directory (replace `/` with `-`, strip leading `-`), then:
-   ```bash
-   ls -lt ~/.claude/projects/<project-slug>/*.jsonl | head -5
-   ```
-   Read the most recent file and extract user messages and assistant actions to reconstruct what happened.
-3. **Recently modified files** — check what files changed recently:
-   ```bash
-   git diff --name-only HEAD~5..HEAD
-   ```
-
-Use all available sources to piece together the session before proceeding.
+**If conversation context is thin** (e.g., invoked in a new session), reconstruct from: `git log --oneline -20`, `git diff HEAD~5..HEAD --stat`, and the most recent session JSONL in `~/.claude/projects/<project-slug>/`.
 
 ### Step 2: Gather input
 
